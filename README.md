@@ -100,7 +100,10 @@ Now, you can use `vue-css-modules` to remake it:
   import styles from './button.css'
 
   export default {
-    mixins: [CSSModules(styles)],
+    mixins: [CSSModules({
+        injectAttr: 'styleName', // optional, default to styleName
+        styles: styles // optional, default to context.$style
+    })],
     props: { mini: Boolean }
   }
 </script>
@@ -191,7 +194,10 @@ This is the equivalent to:
   import styles from './button.css'
 
   export default {
-    mixins: [CSSModules(styles)],
+    mixins: [CSSModules({
+        injectAttr: 'styleName', // optional, default to styleName
+        styles: styles // optional, default to context.$style
+    })],
     props: { mini: Boolean }
   }
 </script>
@@ -212,7 +218,9 @@ This is the equivalent to:
   import CSSModules from 'vue-css-modules'
 
   export default {
-    mixins: [CSSModules()],
+    mixins: [CSSModules({
+        injectAttr: 'styleName', // optional, default to styleName
+    })],
     props: { mini: Boolean }
   }
 </script>
@@ -234,7 +242,10 @@ import CSSModules from 'vue-css-modules'
 import styles from './button.css'
 
 export default {
-  mixins: [CSSModules(styles)],
+    mixins: [CSSModules({
+        injectAttr: 'styleName', // optional, default to styleName
+        styles: styles // optional, default to context.$style
+    })],
   props: { mini: Boolean },
   render() {
     return (
@@ -251,7 +262,10 @@ import CSSModules from 'vue-css-modules'
 import styles from './button.css'
 
 export default {
-  mixins: [CSSModules(styles)],
+    mixins: [CSSModules({
+        injectAttr: 'styleName', // optional, default to styleName
+        styles: styles // optional, default to context.$style
+    })],
   props: { mini: Boolean },
   render(h) {
     return h('button', {
